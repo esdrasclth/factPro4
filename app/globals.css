@@ -1,26 +1,23 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/*
+  La app se compromete con tema claro a propósito: se usa comparando el
+  formulario contra la foto de una factura (papel blanco), y un tema oscuro a
+  medias daría peor contraste justo donde hay que leer cifras pequeñas.
+  El color real lo ponen las clases de Tailwind en <body> (layout.tsx).
+*/
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* En móvil, un input con fuente < 16px hace que iOS Safari haga zoom al enfocar. */
+input,
+select,
+textarea {
+  font-size: 16px;
 }

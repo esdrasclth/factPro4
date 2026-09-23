@@ -1,0 +1,29 @@
+{
+  "_nota": "Valores correctos de fixtures/factura-prueba.html. Sirven de referencia para medir la precisión del extractor.",
+  "_aritmetica": "exento 2835.00 + gravado15 44622.98 + isv15 6693.45 = total 54151.43. Y subtotal 48925.75 - descuentos 1467.77 = 47457.98 = exento + gravado15.",
+
+
+  "proveedor_nombre": "DISTRIBUIDORA HONDUREÑA DEL VALLE, S. DE R.L.",
+  "proveedor_rtn": "08019014728356",
+
+  "numero_factura": "000-002-01-00184392",
+  "cai": "9F4B2E-1A7C8D-3E5F60-B92A41-C7D8E3-5F1A",
+  "rango_autorizado_desde": "000-002-01-00180001",
+  "rango_autorizado_hasta": "000-002-01-00230000",
+  "fecha_limite_emision": "2026-09-30",
+
+  "fecha_emision": "2026-03-11",
+  "cliente_nombre": "Esdras Clother",
+  "cliente_rtn": "05011988043912",
+  "moneda": "HNL",
+
+  "subtotal": 48925.75,
+  "descuentos": 1467.77,
+  "importe_exento": 2835.0,
+  "importe_exonerado": 0.0,
+  "importe_gravado_15": 44622.98,
+  "importe_gravado_18": null,
+  "isv_15": 6693.45,
+  "isv_18": null,
+  "total": 54151.43
+}

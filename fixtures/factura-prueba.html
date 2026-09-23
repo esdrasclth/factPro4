@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+  Factura SINTÉTICA de prueba. Empresa, RTN, CAI y montos son ficticios.
+  Existe solo para medir la precisión del extractor sin usar datos reales.
+  Los valores esperados están en fixtures/factura-prueba.esperado.json
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 28px 34px;
+    font-family: "Courier New", monospace;
+    font-size: 12.5px; color: #111; background: #fff;
+    width: 760px;
+  }
+  .enc { display: flex; justify-content: space-between; align-items: flex-start; }
+  .logo {
+    width: 74px; height: 74px; border: 2px solid #111;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: bold; font-family: Arial, sans-serif;
+  }
+  .emisor { text-align: center; flex: 1; padding: 0 16px; }
+  .emisor h1 { margin: 0 0 3px; font-size: 17px; font-family: Arial, sans-serif; }
+  .emisor div { line-height: 1.45; }
+  .caja { border: 1px solid #111; padding: 7px 10px; font-size: 11.5px; line-height: 1.5; }
+  .fila { display: flex; gap: 14px; margin-top: 14px; }
+  .fila > div { flex: 1; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 11.5px; }
+  th, td { border: 1px solid #111; padding: 4px 6px; }
+  th { background: #e8e8e8; font-family: Arial, sans-serif; font-size: 11px; }
+  td.n { text-align: right; }
+  .tot { margin-top: 12px; margin-left: auto; width: 292px; font-size: 12px; }
+  .tot tr td { border: none; padding: 2.5px 6px; }
+  .tot tr td:last-child { text-align: right; }
+  .tot tr.g td { border-top: 1.5px solid #111; font-weight: bold; font-size: 13.5px; padding-top: 5px; }
+  .pie { margin-top: 18px; font-size: 10.5px; line-height: 1.65; border-top: 1px dashed #666; padding-top: 9px; }
+  .lbl { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="enc">
+  <div class="logo">DH</div>
+  <div class="emisor">
+    <h1>DISTRIBUIDORA HONDUREÑA DEL VALLE, S. DE R.L.</h1>
+    <div>
+      Col. Las Minitas, Ave. República de Panamá<br>
+      Edificio Torre Zenit, Local 4-B<br>
+      Tegucigalpa M.D.C., Francisco Morazán<br>
+      Tel. (504) 2236-8891 &nbsp;|&nbsp; ventas@dhvalle.hn
+    </div>
+  </div>
+  <div class="caja" style="min-width:196px">
+    <span class="lbl">R.T.N.</span><br>08019014728356<br>
+    <span class="lbl">FACTURA</span><br>
+    <span style="font-size:14px;font-weight:bold">000-002-01-00184392</span>
+  </div>
+</div>
+
+<div class="fila">
+  <div class="caja">
+    <span class="lbl">Cliente:</span> Esdras Clother<br>
+    <span class="lbl">R.T.N.:</span> 05011988043912<br>
+    <span class="lbl">Dirección:</span> Barrio El Centro, San Pedro Sula<br>
+    <span class="lbl">No. Orden de Compra:</span> OC-2026-4471
+  </div>
+  <div class="caja" style="max-width:250px">
+    <span class="lbl">Fecha de Emisión:</span> 11/03/2026<br>
+    <span class="lbl">Condición de Pago:</span> Crédito 30 días<br>
+    <span class="lbl">Vendedor:</span> M. Andino<br>
+    <span class="lbl">Moneda:</span> Lempiras (HNL)
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:52px">Cant.</th>
+      <th>Descripción</th>
+      <th style="width:96px">P. Unitario</th>
+      <th style="width:104px">Importe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="n">12</td><td>Caja papel bond carta 75g (10 resmas)</td><td class="n">1,285.00</td><td class="n">15,420.00</td></tr>
+    <tr><td class="n">4</td><td>Tóner HP 26A negro original</td><td class="n">2,340.50</td><td class="n">9,362.00</td></tr>
+    <tr><td class="n">25</td><td>Archivador colgante tamaño oficio</td><td class="n">86.75</td><td class="n">2,168.75</td></tr>
+    <tr><td class="n">6</td><td>Silla ejecutiva ergonómica malla</td><td class="n">3,190.00</td><td class="n">19,140.00</td></tr>
+    <tr><td class="n">3</td><td>Botiquín primeros auxilios (exento)</td><td class="n">945.00</td><td class="n">2,835.00</td></tr>
+  </tbody>
+</table>
+
+<table class="tot">
+  <tr><td>Subtotal</td><td>48,925.75</td></tr>
+  <tr><td>Descuentos y Rebajas</td><td>1,467.77</td></tr>
+  <tr><td>Importe Exento</td><td>2,835.00</td></tr>
+  <tr><td>Importe Exonerado</td><td>0.00</td></tr>
+  <tr><td>Importe Gravado 15%</td><td>44,622.98</td></tr>
+  <tr><td>I.S.V. 15%</td><td>6,693.45</td></tr>
+  <tr class="g"><td>TOTAL A PAGAR</td><td>L 54,151.43</td></tr>
+</table>
+
+<div class="pie">
+  <span class="lbl">C.A.I.:</span> 9F4B2E-1A7C8D-3E5F60-B92A41-C7D8E3-5F1A<br>
+  <span class="lbl">Rango Autorizado:</span> 000-002-01-00180001 &nbsp;al&nbsp; 000-002-01-00230000<br>
+  <span class="lbl">Fecha Límite de Emisión:</span> 30/09/2026<br>
+  <br>
+  "Este documento es un comprobante fiscal válido para efectos tributarios."<br>
+  Original: Cliente &nbsp;|&nbsp; Copia: Obligado Tributario Emisor<br>
+  La factura es beneficio de todos. ¡Exíjala!
+</div>
+
+</body>
+</html>

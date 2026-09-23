@@ -1,0 +1,15 @@
+# Secretos: las variables se configuran en Vercel, nunca se suben.
+.env
+.env.local
+.env.*.local
+.neon
+
+# Artefactos locales
+node_modules
+.next
+out
+
+# Herramientas de desarrollo que no forman parte de la app desplegada
+db/
+scripts/
+fixtures/
