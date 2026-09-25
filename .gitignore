@@ -45,3 +45,6 @@ next-env.d.ts
 .neon
 .vercel
 .env*
+
+# La plantilla sin valores sí se versiona: documenta qué variables hacen falta.
+!.env.example
